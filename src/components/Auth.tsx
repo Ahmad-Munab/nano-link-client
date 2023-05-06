@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { register, login } from "../api";
 
-const Auth = ({ setShowAuth }: any) => {
+const Auth = () => {
   const [authType, setAuthType] = useState("register");
   const [authTexts, setAuthTexts] = useState({
     t1: "Sign up for an account",

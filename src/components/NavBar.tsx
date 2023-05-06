@@ -1,4 +1,3 @@
-import { sign } from "crypto";
 import useAuth from "../hooks/useAuth";
 
 import { useState } from "react";
@@ -6,10 +5,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 import { AiOutlineUp, AiOutlineDown } from "react-icons/ai";
-import AuthModal from "./Auth";
 
 function NavBar({ setShowAuth }: any) {
-  const [auth, setAuth] = useState(useAuth());
+  const [auth] = useState(useAuth());
   const [dropdown, setDropdown] = useState(false);
 
   // useEffect(() => {
@@ -21,9 +19,6 @@ function NavBar({ setShowAuth }: any) {
   //     }
   // }, [])
 
-  function signUp() {
-    return;
-  }
   function signOut() {
     localStorage.removeItem("jwt");
     localStorage.removeItem("username");
