@@ -31,6 +31,7 @@ export const login = async (username: string, password: string) => {
     localStorage.removeItem("jwt");
     localStorage.removeItem("username");
     console.error(err);
+   
   }
 };
 
@@ -46,7 +47,10 @@ export const getURLs = async () => {
 
     return data;
   } catch (err) {
+    localStorage.removeItem("jwt");
+    localStorage.removeItem("username");
     console.error(err);
+    window.location.reload();
   }
 };
 
